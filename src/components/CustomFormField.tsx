@@ -16,7 +16,7 @@ const CustomFormField: React.FC<CustomFormField> = (prop) => {
         <FormField
             control={prop.control as Control}
             name={prop.name}
-            render={({ field }) => (
+            render={({ field, fieldState: { error } }) => (
                 <FormItem className="grid">
                     <FormLabel className="text-left">{prop.label}</FormLabel>
                     <FormControl>
@@ -24,9 +24,15 @@ const CustomFormField: React.FC<CustomFormField> = (prop) => {
                             placeholder={prop.placeholder}
                             type={prop.type}
                             {...field}
+                            className={error ? "border-destructive" : ""}
                         />
                     </FormControl>
-                    <FormMessage />
+                    <FormMessage className="text-xs" />
+
+                    {/* {error
+                        ? <FormMessage className="text-xs" />
+                        : <FormMessage className="text-xs">&nbsp;</FormMessage>
+                    } */}
                 </FormItem>
             )}
         />

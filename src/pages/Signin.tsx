@@ -2,18 +2,17 @@ import CustomFormField from "@/components/CustomFormField";
 import OAuth from "@/components/OAuth";
 import OrDivider from "@/components/OrDivider";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle, } from "@/components/ui/card";
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Form } from "@/components/ui/form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 const formSchema = z.object({
-    email: z.string(),
+    email: z.string().email("Invalid email address"),
     password: z.string().min(8, {
         message: "Password must be at least 8 characters.",
     }),
 });
-
 const Signin = () => {
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
@@ -32,10 +31,10 @@ const Signin = () => {
                 <form onSubmit={form.handleSubmit(onSubmit)}>
                     <Card className="w-full max-w-sm" >
                         <CardHeader>
-                            <CardTitle className="text-2xl">Sign In</CardTitle>
-                            <CardDescription>
-                                {/* TODO: Description */}
-                            </CardDescription>
+                            <CardTitle className="text-2xl text-center">Sign In</CardTitle>
+                            {/* <CardDescription>
+                                TODO: Description
+                            </CardDescription> */}
                         </CardHeader>
                         <CardContent className="grid gap-6">
                             <OAuth />
@@ -49,9 +48,9 @@ const Signin = () => {
                             <Button className="w-full" variant={"paint"}>Sign in</Button>
                             <div className="flex flex-col w-full gap-1 text-left">
                                 <p>
-                                    Don't have an account? <a href="/signup" className="text-blue-500 hover:underline"> Sign up</a>
+                                    Don't have an account? <a href="/signup" className="text-primary-paint hover:underline"> Sign up</a>
                                 </p>
-                                <a href="/forgotpassword" className="text-blue-500 hover:underline">
+                                <a href="/forgotpassword" className="text-primary-paint hover:underline">
                                     Forgot password?
                                 </a>
                             </div>
