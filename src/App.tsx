@@ -1,6 +1,7 @@
 import { createBrowserRouter, createRoutesFromElements, Outlet, Route, RouterProvider } from 'react-router';
 import './App.css';
 import ThemeSwitcher from './components/ThemeSwitcher';
+import EventDescription from './pages/EventDescription';
 import ForgotPassword from './pages/ForgotPassword';
 import Signin from './pages/Signin';
 import Signup from './pages/Signup';
@@ -29,6 +30,7 @@ const Router = createBrowserRouter(
       <Route path='signin' element={<Signin />} />
       <Route path='signup' element={<Signup />} />
       <Route path='forgotpassword' element={<ForgotPassword />} />
+      <Route path='Eventdescription' element={<EventDescription />} />
     </Route>
   ))
 
