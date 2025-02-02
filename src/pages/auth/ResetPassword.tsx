@@ -17,7 +17,7 @@ const formSchema = z.object({
     path: ["confirmPassword"],
 });
 
-const ResetPasword = () => {
+const ResetPassword = () => {
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {
@@ -50,6 +50,6 @@ const ResetPasword = () => {
     );
 };
 
-export default ResetPasword;
+export default ResetPassword;
 
 
