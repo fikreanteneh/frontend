@@ -1,9 +1,13 @@
 import { createBrowserRouter, createRoutesFromElements, Outlet, Route, RouterProvider } from 'react-router';
-import './App.css';
+import GlowingBackground from './components/GlowingBackground';
 import ThemeSwitcher from './components/ThemeSwitcher';
-import ForgotPassword from './pages/ForgotPassword';
-import Signin from './pages/Signin';
-import Signup from './pages/Signup';
+import AuthLayout from './pages/auth/AuthLayout';
+import EmailVerification from './pages/auth/EmailVerification';
+import ForgotPassword from './pages/auth/ForgotPassword';
+import ResetPasword from './pages/auth/ResetPassword';
+import Signin from './pages/auth/Signin';
+import Signup from './pages/auth/Signup';
+import QuillWriter from './pages/event/components/QuillEditor';
 import { ThemeProvider } from './ThemeProvider';
 
 //TODO: Continue With Google
@@ -23,12 +27,19 @@ const Layout = () => {
   )
 }
 
+
 const Router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<Layout />}>
-      <Route path='signin' element={<Signin />} />
-      <Route path='signup' element={<Signup />} />
-      <Route path='forgotpassword' element={<ForgotPassword />} />
+      <Route index element={<GlowingBackground />} />
+      <Route path='auth' element={<AuthLayout />}>
+        <Route path='signin' element={<Signin />} />
+        <Route path='signup' element={<Signup />} />
+        <Route path='forgotpassword' element={<ForgotPassword />} />
+        <Route path='resetpassword' element={<ResetPasword />} />
+        <Route path='verifyemail' element={<EmailVerification />} />
+      </Route>
+      <Route path='/editor' element={<QuillWriter />} />
     </Route>
   ))
 

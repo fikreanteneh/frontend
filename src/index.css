@@ -57,59 +57,90 @@
     --chart-5: 340 75% 55%;
   }
 
+  .darkpurple {
+    --card-paint: 242, 73%, 7%;
+    --popover-paint: 266 100% 20%;
+    --primary-paint: 266 100% 38%;
+    --secondary-paint: 266 100% 23%;
+    --muted-paint: 266 30% 55%;
+    --accent-paint: 266 30% 80%;
+
+    --paint: #5615ab;
+    --paint-1: #45108a;
+    --paint-2: #340c69;
+    --paint-3: #230847;
+
+    --paint-1-foreground: #6a2bc0;
+    --paint-2-foreground: #7f41d5;
+    --paint-3-foreground: #9447ea;
+  }
+  .lightpurple {
+    --card-paint: 266 100% 95%;
+    --popover-paint: 266 100% 85%;
+    --primary-paint: 266 100% 65%;
+    --secondary-paint: 266 100% 50%;
+    --muted-paint: 266 30% 65%;
+    --accent-paint: 266 30% 90%;
+  }
+
+  .darkgreen {
+    --card-paint: 120 100% 12%;
+    --popover-paint: 120 100% 20%;
+    --primary-paint: 120 100% 45%;
+    --secondary-paint: 120 100% 30%;
+    --muted-paint: 120 30% 55%;
+    --accent-paint: 120 30% 80%;
+  }
+  .lightgreen {
+    --card-paint: 120 100% 95%;
+    --popover-paint: 120 100% 85%;
+    --primary-paint: 120 100% 65%;
+    --secondary-paint: 120 100% 50%;
+    --muted-paint: 120 30% 65%;
+    --accent-paint: 120 30% 90%;
+  }
+
+  .darkorange {
+    --card-paint: 30 100% 12%;
+    --popover-paint: 30 100% 20%;
+    --primary-paint: 30 100% 45%;
+    --secondary-paint: 30 100% 30%;
+    --muted-paint: 30 30% 55%;
+    --accent-paint: 30 30% 80%;
+  }
+  .lightorange {
+    --card-paint: 30 100% 95%;
+    --popover-paint: 30 100% 85%;
+    --primary-paint: 30 100% 65%;
+    --secondary-paint: 30 100% 50%;
+    --muted-paint: 30 30% 65%;
+    --accent-paint: 30 30% 90%;
+  }
+
   .purple {
-    --card-paint: 266 100% 9%; /* Dark purple */
-    --popover-paint: 266 100% 15%; /* Slightly lighter purple */
-    --primary-paint: 266 100% 38%; /* Base purple */
-    --secondary-paint: 266 100% 23%; /* Muted dark purple */
-    --muted-paint: 266 30% 50%; /* A more subdued purple */
-    --accent-paint: 266 30% 73%; /* Lighter purple for emphasis */
-    --destructive-paint: 0 100% 67%; /* Vibrant red for destructive actions */
+    --card-paint: 266 100% 9%;
+    --popover-paint: 266 100% 15%;
+    --primary-paint: 266 100% 38%;
+    --secondary-paint: 266 100% 23%;
+    --muted-paint: 266 30% 50%;
+    --accent-paint: 266 30% 73%;
+    --destructive-paint: 0 100% 67%;
   }
   .green {
-    --card-paint: 120 100% 9%; /* Dark green */
-    --popover-paint: 120 100% 15%; /* Slightly lighter green */
-    --primary-paint: 120 100% 38%; /* Base green */
-    --secondary-paint: 120 100% 23%; /* Muted dark green */
-    --muted-paint: 120 30% 50%; /* A more subdued green */
-    --accent-paint: 120 30% 73%; /* Lighter green for emphasis */
-    --destructive-paint: 0 100% 67%; /* Vibrant red for destructive actions */
+    --card-paint: 120 100% 9%;
+    --popover-paint: 120 100% 15%;
+    --primary-paint: 120 100% 38%;
+    --secondary-paint: 120 100% 23%;
+    --muted-paint: 120 30% 50%;
+    --accent-paint: 120 30% 73%;
   }
   .orange {
-    --card-paint: 30 100% 9%; /* Dark orange */
-    --popover-paint: 30 100% 15%; /* Slightly lighter orange */
-    --primary-paint: 30 100% 38%; /* Base orange */
-    --secondary-paint: 30 100% 23%; /* Muted dark orange */
-    --muted-paint: 30 30% 50%; /* A more subdued orange */
-    --accent-paint: 30 30% 73%; /* Lighter orange for emphasis */
-    --destructive-paint: 0 100% 67%; /* Vibrant red for destructive actions */
-  }
-  .pink {
-    --card-paint: 330 100% 9%; /* Dark pink */
-    --popover-paint: 330 100% 15%; /* Slightly lighter pink */
-    --primary-paint: 330 100% 38%; /* Base pink */
-    --secondary-paint: 330 100% 23%; /* Muted dark pink */
-    --muted-paint: 330 30% 50%; /* A more subdued pink */
-    --accent-paint: 330 30% 73%; /* Lighter pink for emphasis */
-    --destructive-paint: 0 100% 67%; /* Vibrant red for destructive actions */
-  }
-  .blue {
-    --card-paint: 240 100% 9%; /* Dark blue */
-    --popover-paint: 240 100% 15%; /* Slightly lighter blue */
-    --primary-paint: 240 100% 38%; /* Base blue */
-    --secondary-paint: 240 100% 23%; /* Muted dark blue */
-    --muted-paint: 240 30% 50%; /* A more subdued blue */
-    --accent-paint: 240 30% 73%; /* Lighter blue for emphasis */
-    --destructive-paint: 0 100% 67%; /* Vibrant red for destructive actions */
-  }
-  .yellow {
-    --card-paint: 60 100% 9%; /* Dark yellow */
-    --popover-paint: 60 100% 15%; /* Slightly lighter yellow */
-    --primary-paint: 60 100% 38%; /* Base yellow */
-    --secondary-paint: 60 100% 23%; /* Muted dark yellow */
-    --muted-paint: 60 30% 50%; /* A more subdued yellow */
-    --accent-paint: 60 30% 73%; /* Lighter yellow for emphasis */
-    --destructive-paint: 0 100% 67%; /* Vibrant red for destructive actions */
+    --card-paint: 30 100% 9%;
+    --popover-paint: 30 100% 15%;
+    --primary-paint: 30 100% 38%;
+    --secondary-paint: 30 100% 23%;
+    --muted-paint: 30 30% 50%;
+    --accent-paint: 30 30% 73%;
   }
 }
 

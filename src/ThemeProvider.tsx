@@ -1,19 +1,18 @@
 import React, { createContext, useContext, useState, type ReactNode } from "react";
 
-export type ColorTypes = "green" | "blue" | "orange" | "purple" | "yellow";
 export type ThemeTypes = "dark" | "light";
-
-export const colors: ColorTypes[] = [
-    "green",
-    "blue",
-    "orange",
-    "purple",
-    "yellow",
-];
+// eslint-disable-next-line react-refresh/only-export-components
 export const themes: ThemeTypes[] = ["dark", "light"];
-
 export const darkTheme: ThemeTypes = "dark";
 export const lightTheme: ThemeTypes = "light";
+
+
+export type ColorTypes = "green" | "orange" | "purple";
+// eslint-disable-next-line react-refresh/only-export-components
+export const colors: ColorTypes[] = ["green", "orange", "purple"];
+export const green: ColorTypes = "green";
+export const orange: ColorTypes = "orange";
+export const purple: ColorTypes = "purple";
 
 export type ThemeContextType = {
     currentColor: ColorTypes,
@@ -24,12 +23,12 @@ export type ThemeContextType = {
 
 const ThemeContext = createContext<ThemeContextType>({
     currentColor: "purple",
-    currentTheme: "dark",
+    currentTheme: "light",
     changeColor: () => { },
     changeTheme: () => { },
 });
 
-export const useTheme = () => {
+const useTheme = () => {
     return useContext<ThemeContextType>(ThemeContext);
 };
 
@@ -60,13 +59,19 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
         changeTheme
     };
 
+    const themeClass = currentTheme as string;
+    // const colorClass = (currentTheme as string) + (currentColor as string);
+    // const colorClass = "light" + "green";
+    const colorClass = "darkpurple";
+
     return (
         <ThemeContext.Provider value={value}>
-            <div className={`${currentTheme} ${currentColor} p-1 text-main-1`}>
+            <div className={`${themeClass} ${colorClass} p-1 text-main-1`}>
                 {children}
             </div>
         </ThemeContext.Provider>
     );
 };
 
+// eslint-disable-next-line react-refresh/only-export-components
 export default useTheme;
