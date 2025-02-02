@@ -8,6 +8,7 @@ import ResetPasword from './pages/auth/ResetPassword';
 import Signin from './pages/auth/Signin';
 import Signup from './pages/auth/Signup';
 import QuillWriter from './pages/event/components/QuillEditor';
+import EventDescription from './pages/EventDescription';
 import { ThemeProvider } from './ThemeProvider';
 
 //TODO: Continue With Google
@@ -36,6 +37,7 @@ const Router = createBrowserRouter(
         <Route path='signin' element={<Signin />} />
         <Route path='signup' element={<Signup />} />
         <Route path='forgotpassword' element={<ForgotPassword />} />
+        <Route path='Eventdescription' element={<EventDescription />} />
         <Route path='resetpassword' element={<ResetPasword />} />
         <Route path='verifyemail' element={<EmailVerification />} />
       </Route>
