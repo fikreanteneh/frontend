@@ -1,4 +1,4 @@
-import useTheme, { colors, ColorTypes } from '../ThemeProvider';
+import useTheme, { colors, ColorTypes } from '../store/ThemeProvider';
 
 const ThemeSwitcher = () => {
     const { currentColor, currentTheme, changeColor, changeTheme } = useTheme();

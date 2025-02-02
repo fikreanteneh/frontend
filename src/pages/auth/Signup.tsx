@@ -2,31 +2,22 @@ import CustomFormField from "@/components/CustomFormField";
 import { Button } from "@/components/ui/button";
 import { CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Form } from "@/components/ui/form";
+import { useToast } from "@/hooks/use-toast";
 import OrDivider from "@/pages/auth/components/OrDivider";
+import { useAuth } from "@/store/AuthProvider";
+import { SignUpSchema } from "@/types/auth";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import OAuth from "./components/OAuth";
 
-const formSchema = z.object({
-    fullName: z.string().min(3, {
-        message: "Full Name must be at least 3 characters."
-    }),
-    email: z.string().email("Invalid email address"),
-    password: z.string().min(8, {
-        message: "Password must be at least 8 characters.",
-    }),
-    confirmPassword: z.string().min(8, {
-        message: "Password must be at least 8 characters.",
-    }),
-}).refine((data) => data.password === data.confirmPassword, {
-    message: "Passwords do not match",
-    path: ["confirmPassword"],
-});
+
 
 const Signup = () => {
-    const form = useForm<z.infer<typeof formSchema>>({
-        resolver: zodResolver(formSchema),
+    const { toast } = useToast();
+    const { registerWithEmail } = useAuth();
+    const form = useForm<z.infer<typeof SignUpSchema>>({
+        resolver: zodResolver(SignUpSchema),
         defaultValues: {
             email: "",
             password: "",
@@ -34,8 +25,16 @@ const Signup = () => {
             confirmPassword: ""
         },
     });
-    const onSubmit = (values: z.infer<typeof formSchema>) => {
-        console.log(values);
+    const onSubmit = async (values: z.infer<typeof SignUpSchema>) => {
+        try {
+            await registerWithEmail(values.email, values.password, values.fullName);
+        } catch (error) {
+            toast({
+                variant: 'destructive',
+                title: 'Error',
+                description: (error as Error).message,
+            })
+        }
     };
 
     return (
